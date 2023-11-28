@@ -65,7 +65,7 @@ int main() {
 		cout << "LEFT HAND RULE" << setw(8) << ": " << s.lhfSum << endl;
 		cout << "RIGHT HAND RULE" << setw(7) << ": " << s.rhfSum << endl;
 	}
-	else {
+	else {//if small number not entered first
 		cout << "Please enter the small number first..." << endl;
 	
 	}
