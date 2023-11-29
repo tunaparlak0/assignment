@@ -13,6 +13,7 @@ struct values {
 	float lhf, rhf, midpoint;//variables about values of ..th term 
 };
 int main() {
+	//defining structs
 	sums s;
 	values v;
 	float a, b, n;  //variables about interval
@@ -44,13 +45,13 @@ int main() {
 		for (float i = a; i < b; i += delta) {
 				sayi++;//increasing the term of partition
 				// calculating ..th term of lhf,rhf,midpoint values according to integral of 𝒇(𝒙) = 𝒙^3 + 𝟒𝒙
-				v.lhf = pow(i, 3) + 4 * i;
-				v.rhf = pow((i + delta), 3) + 4 * (i + delta);
-				v.midpoint = pow(epsilon, 3) + 4 * epsilon;
+				v.lhf = (pow(i, 3) + 4 * i)*delta;
+				v.rhf = (pow((i + delta), 3) + 4 * (i + delta))*delta;
+				v.midpoint = (pow(epsilon, 3) + 4 * epsilon)*delta;
 
-				s.lhfSum = s.lhfSum + v.lhf * delta;//summing the lhf values
-				s.rhfSum = s.rhfSum + v.rhf * delta;//summing the rhf values
-				s.midpointSum = s.midpointSum + v.midpoint * delta;//summing the midpoint values
+				s.lhfSum = s.lhfSum + v.lhf ;//summing the lhf values
+				s.rhfSum = s.rhfSum + v.rhf ;//summing the rhf values
+				s.midpointSum = s.midpointSum + v.midpoint ;//summing the midpoint values
 				//printing values
 				cout << setw(4) << sayi << setw(12) << i << setw(14) << epsilon << setw(15) << v.lhf << setw(14) << v.rhf << setw(14) << v.midpoint << endl;
 				epsilon = epsilon + delta;//increasing the epsilon value
